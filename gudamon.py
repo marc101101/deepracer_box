@@ -46,13 +46,11 @@ textdata = [
 def buttonhandler(channel):
 	global fail, gudauptime
 	fail=1
-
-		
-		
+ 
 def main(argv):
 	global fail, gudauptime, textid
-	print "========= gudamon v0.0.0.0.0.0.0.1 ==========" 
-	print "******************************************" 
+	print("========= gudamon v0.0.0.0.0.0.0.1 ==========")
+	print("******************************************")
 
 	height = GLCD.TFT_HEIGHT
 	width = GLCD.TFT_WIDTH
