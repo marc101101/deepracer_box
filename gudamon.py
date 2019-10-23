@@ -76,7 +76,7 @@ def main(argv):
 			draw.text((5, 50), str(gudauptime), font=font, fill=(255,255,255,255))
 			draw.text((5, 80), 'seconds', font=font, fill=(255,255,255,255))
 			disp.display()
-			time.sleep(1)
+			time.sleep(0.001)
 		else:
 			fail = 0
 			disp.clear(color=(0,0,0))
