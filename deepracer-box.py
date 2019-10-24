@@ -55,6 +55,25 @@ def buttonhandler(channel):
 	print(type(status))
 	print(status)
 
+	start_time = time.time()
+
+	while GPIO.input(channel) == 0:  # Wait for the button up
+		pass
+
+	buttonTime = time.time() - start_time
+
+	if buttonTime >= .1:  # Ignore noise
+		buttonStatus = 1  # 1= brief push
+		print("BRIEF")
+
+	if buttonTime >= 2:
+		buttonStatus = 2  # 2= Long push
+		print("LONG")
+
+	if buttonTime >= 4:
+		buttonStatus = 3  # 3= really long push
+		print("REALLY LONG")
+
 	if status == 1:
 		print("here-1")
 		status = 2
