@@ -52,7 +52,8 @@ def setCurrentTeamTime(time, team):
 def buttonhandler(channel):
 	global status
 
-	print ("click - status: " + str(status))
+	print(type(status))
+	print(status)
 
 	if status == 1:
 		status = 2
@@ -60,6 +61,7 @@ def buttonhandler(channel):
 		status = 3
 	if status == 3:
 		status = 1
+
 
 
 def get_current_time(count):
