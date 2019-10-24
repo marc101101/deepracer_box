@@ -61,6 +61,7 @@ def buttonhandler(channel):
 		pass
 
 	buttonTime = time.time() - start_time
+	print("BUTTONTIME: " + buttonTime)
 
 	if .1 <= buttonTime < 2:  # Ignore noise
 		buttonStatus = 1  # 1= brief push
