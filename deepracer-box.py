@@ -12,7 +12,7 @@ import time
 import os
 import sys
 import tft_py as GLCD
-from random import randint
+from random import randrange
 
 import urllib2
 import json
@@ -30,14 +30,14 @@ font2 = ImageFont.truetype('/usr/share/fonts/truetype/freefont/FreeSerifBold.ttf
 
 
 def getCurrentTeam():
-	#resp = requests.get('https://todolist.example.com/tasks/')
-	#if resp.status_code != 200:
+	resp = requests.get('https://swapi.co/api/people/' + str(randrange(10)))
+	if resp.status_code != 200:
 		# This means something went wrong.
 		# Maybe retry mechanism?
 	#	raise ApiError('GET /tasks/ {}'.format(resp.status_code))
-	#for todo_item in resp.json():
-	#	print('{} {}'.format(todo_item['id'], todo_item['summary']))
-	return "TEAM TEST"
+		return "connection error"
+	else:
+		return resp.json()["name"]
 
 
 def setCurrentTeamTime(time, team):
@@ -74,8 +74,6 @@ def buttonhandler(channel):
 	elif buttonTime >= 4:
 		print("REALLY LONG")
 		status = 1
-
-
 
 
 def get_current_time(count):
