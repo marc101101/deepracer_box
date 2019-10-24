@@ -73,6 +73,7 @@ def buttonhandler(channel):
 
 	elif buttonTime >= 4:
 		print("REALLY LONG")
+		team = getCurrentTeam()
 		status = 1
 
 
@@ -124,10 +125,11 @@ def main(argv):
 	########################
 	##### STATE MACHINE ####
 	########################
-	
+
+	team = getCurrentTeam()
+
 	while True:
 		if status == 1:
-			team = getCurrentTeam()
 			counter_time = 0
 			draw_method(disp, draw, team, counter_time)
 
