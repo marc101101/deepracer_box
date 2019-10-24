@@ -58,12 +58,14 @@ def buttonhandler(channel):
 	if status == 1:
 		print("here-1")
 		status = 2
-	if status == 2:
-		print("here-2")
-		status = 3
-	if status == 3:
-		print("here-3")
-		status = 1
+	else:
+		if status == 2:
+			print("here-2")
+			status = 3
+		else:
+			if status == 3:
+				print("here-3")
+				status = 1
 
 
 
