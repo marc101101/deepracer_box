@@ -79,7 +79,8 @@ def get_current_time(count):
 def draw_method(disp, draw, team, counter_time):
 	disp.clear(color=(0,0,0))						
 	draw.text((10,20), team, font=font)
-	draw.text((10,60), get_current_time(counter_time), font=font2)
+	draw.text((10,40), get_current_time(counter_time), font=font2)
+	draw.text((10, 20), "mode: " + status, font=font)
 	disp.display()
 
 
@@ -110,7 +111,7 @@ def main(argv):
 	
 	GPIO.setmode(GPIO.BOARD)
 	GPIO.setup(10, GPIO.IN, pull_up_down=GPIO.PUD_UP)
-	GPIO.add_event_detect(10, GPIO.FALLING, callback=buttonhandler)
+	GPIO.add_event_detect(10, GPIO.FALLING, callback=buttonhandler, bouncetime=1000)
 
 
 	########################
@@ -126,7 +127,7 @@ def main(argv):
 		if status == 2:
 			counter_time += 1
 			draw_method(disp, draw, team, counter_time)
-			time.sleep(0.0001)
+			time.sleep(0.001)
 
 		if status == 3:
 			draw_method(disp, draw, team, counter_time)

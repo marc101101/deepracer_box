@@ -8,7 +8,7 @@ def time_formater(count):
     seconds = "%02d" % ((count /1000) % 60)
     minutes = "%02d" %  ((count /1000) / 60)
 
-    print str(minutes) + ":" + str(seconds) + ":" + miliseconds
+    print(str(minutes) + ":" + str(seconds) + ":" + miliseconds)
 
 while True:
     time_formater(time_count)
