@@ -19,7 +19,7 @@ import json
 import cStringIO
 import RPi.GPIO as GPIO
 
-gudauptime=0
+status=0
 counter_time = 0
 textid = 0
 team = "-- no team --"
