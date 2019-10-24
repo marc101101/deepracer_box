@@ -80,7 +80,7 @@ def draw_method(disp, draw, team, counter_time):
 	disp.clear(color=(0,0,0))						
 	draw.text((10,20), team, font=font)
 	draw.text((10,40), get_current_time(counter_time), font=font2)
-	draw.text((10, 20), "mode: " + str(status), font=font)
+	draw.text((10, 60), "mode: " + str(status), font=font)
 	disp.display()
 
 
