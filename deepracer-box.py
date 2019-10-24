@@ -56,10 +56,13 @@ def buttonhandler(channel):
 	print(status)
 
 	if status == 1:
+		print("here-1")
 		status = 2
 	if status == 2:
+		print("here-2")
 		status = 3
 	if status == 3:
+		print("here-3")
 		status = 1
 
 
