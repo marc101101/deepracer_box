@@ -52,16 +52,13 @@ def setCurrentTeamTime(time, team):
 def buttonhandler(channel):
 	global status
 
-	print(type(status))
-	print(status)
-
 	start_time = time.time()
 
 	while GPIO.input(channel) == 0:  # Wait for the button up
 		pass
 
 	buttonTime = time.time() - start_time
-	print("BUTTONTIME: " + buttonTime)
+	print("BUTTONTIME: " + str(buttonTime))
 
 	if .1 <= buttonTime < 2:  # Ignore noise
 		buttonStatus = 1  # 1= brief push
