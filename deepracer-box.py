@@ -25,6 +25,8 @@ textid = 0
 team = "-- no team --"
 
 font = ImageFont.truetype('/usr/share/fonts/truetype/freefont/FreeSerifBold.ttf', 16) #use a truetype font
+font2 = ImageFont.truetype('/usr/share/fonts/truetype/freefont/FreeSerifBold.ttf', 20) #use a truetype font
+
 
 
 def getCurrentTeam():
@@ -70,7 +72,7 @@ def get_current_time(count):
 def draw_method(disp, draw, team, counter_time):
 	disp.clear(color=(0,0,0))						
 	draw.text((10,20), team, font=font)
-	draw.text((10,40), get_current_time(counter_time), font=font)
+	draw.text((10,40), get_current_time(counter_time), font=font2)
 	disp.display()
 
 
