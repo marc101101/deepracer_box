@@ -25,7 +25,7 @@ textid = 0
 team = "-- no team --"
 
 font = ImageFont.truetype('/usr/share/fonts/truetype/freefont/FreeSerifBold.ttf', 16) #use a truetype font
-font2 = ImageFont.truetype('/usr/share/fonts/truetype/freefont/FreeSerifBold.ttf', 20) #use a truetype font
+font2 = ImageFont.truetype('/usr/share/fonts/truetype/freefont/FreeSerifBold.ttf', 26) #use a truetype font
 
 
 
