@@ -125,7 +125,7 @@ def main(argv):
 	
 	GPIO.setmode(GPIO.BOARD)
 	GPIO.setup(10, GPIO.IN, pull_up_down=GPIO.PUD_UP)
-	GPIO.add_event_detect(10, GPIO.FALLING, callback=buttonhandler, bouncetime=500)
+	GPIO.add_event_detect(10, GPIO.FALLING, callback=buttonhandler)
 
 
 	########################
