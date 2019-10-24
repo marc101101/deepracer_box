@@ -110,7 +110,7 @@ def start_timer(disp, draw):
 		counter_time += 1
 
 		draw_method(disp, draw, team, counter_time)
-		
+
 		time.sleep(0.001)
 
 def main(argv):
@@ -162,7 +162,8 @@ def main(argv):
 			timer_started.start()
 
 		if status == 3:
-			timer_started.join()
+			timer_started.stop()
+			print(counter_time)
 			draw_method(disp, draw, team, counter_time)
 
 
