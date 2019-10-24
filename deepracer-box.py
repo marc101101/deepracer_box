@@ -163,7 +163,7 @@ def main(argv):
 
 		if status == 3:
 			timer_started.stop()
-			print(counter_time)
+			print("COUNTER_TIME: " + str(counter_time))
 			draw_method(disp, draw, team, counter_time)
 
 
