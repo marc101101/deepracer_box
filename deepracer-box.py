@@ -49,6 +49,13 @@ def setCurrentTeamTime(time, team):
 	#resp = requests.post('https://todolist.example.com/tasks/', json=payload)
 
 
+def reset():
+	global teams, status
+
+	team = "-- no team --"
+	team = getCurrentTeam()
+	status = 1
+
 def buttonhandler(channel):
 	global status, team
 
@@ -70,12 +77,12 @@ def buttonhandler(channel):
 			else:
 				if status == 3:
 					status = 1
+					reset()
 
 	elif buttonTime >= 4:
 		print("REALLY LONG")
-		team = "-- no team --"
-		team = getCurrentTeam()
-		status = 1
+		reset()
+
 
 
 def get_current_time(count):
