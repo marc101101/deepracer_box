@@ -6,6 +6,8 @@ from PIL import Image
 from PIL import ImageDraw
 from PIL import ImageFont
 
+from threading import Thread
+
 import requests
 
 import time
@@ -88,7 +90,7 @@ def buttonhandler(channel):
 
 
 def get_current_time(time_count):
-	milliseconds = str((float(time_count) / 1000)).split('.')[1].zfill(3)[:2]
+	milliseconds = str((float(time_count) / 1000)).split('.')[1].zfill(3)
 	seconds = "%02d" % ((time_count / 1000) % 60)
 	minutes = "%02d" % ((time_count / 1000) / 60)
 	return str(minutes) + ":" + str(seconds) + ":" + milliseconds
@@ -101,6 +103,14 @@ def draw_method(disp, draw, team, counter_time):
 	draw.text((10, 100), "mode: " + str(status), font=font)
 	disp.display()
 
+def start_timer(disp, draw):
+	global team, counter_time
+
+	while True:
+	counter_time += 1
+
+	draw_method(disp, draw, team, counter_time)
+	time.sleep(0.001)
 
 def main(argv):
 	global status, counter_time, textid, team
@@ -131,6 +141,9 @@ def main(argv):
 	GPIO.setup(10, GPIO.IN, pull_up_down=GPIO.PUD_UP)
 	GPIO.add_event_detect(10, GPIO.FALLING, callback=buttonhandler)
 
+	timer_thread = None
+	timer_started = False
+
 
 	########################
 	##### STATE MACHINE ####
@@ -143,12 +156,12 @@ def main(argv):
 			counter_time = 0
 			draw_method(disp, draw, team, counter_time)
 
-		if status == 2:
-			counter_time += 1
-			draw_method(disp, draw, team, counter_time)
-			time.sleep(0.001)
+		if status == 2 and not timer_started:
+			timer_thread = Thread(target=start_timer(disp, draw), args=(1,))
+			timer_started.start()
 
 		if status == 3:
+			timer_started.join()
 			draw_method(disp, draw, team, counter_time)
 
 
