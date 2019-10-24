@@ -69,13 +69,14 @@ def get_current_time(count):
 
 def draw_method(disp, draw, team, counter_time):
 	disp.clear(color=(0,0,0))						
-	draw.text((5,20), team, font=font)
-	draw.text((10,20), get_current_time(counter_time), font=font)
+	draw.text((10,20), team, font=font)
+	draw.text((10,40), get_current_time(counter_time), font=font)
 	disp.display()
 
 
 def main(argv):
 	global status, counter_time, textid, team
+
 	print("========= deepracker-box v0.0.0.0.0.0.0.1 ==========")
 	print("******************************************")
 
