@@ -32,6 +32,7 @@ font2 = ImageFont.truetype('/usr/share/fonts/truetype/freefont/FreeSerifBold.ttf
 def getCurrentTeam():
 	resp = requests.get('https://swapi.co/api/people/' + str(randrange(10)))
 	if resp.status_code != 200:
+		print(resp)
 		# This means something went wrong.
 		# Maybe retry mechanism?
 	#	raise ApiError('GET /tasks/ {}'.format(resp.status_code))
@@ -51,7 +52,7 @@ def setCurrentTeamTime(time, team):
 
 
 def reset():
-	global teams, status
+	global team, status
 
 	team = "-- no team --"
 	team = getCurrentTeam()
