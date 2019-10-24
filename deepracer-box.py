@@ -20,7 +20,7 @@ import cStringIO
 import RPi.GPIO as GPIO
 
 gudauptime=0
-fail = 0
+counter_time = 0
 textid = 0
 team = "-- no team --"
 
