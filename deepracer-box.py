@@ -61,25 +61,20 @@ def buttonhandler(channel):
 	print("BUTTONTIME: " + str(buttonTime))
 
 	if .1 <= buttonTime < 2:  # Ignore noise
-		buttonStatus = 1  # 1= brief push
 		print("BRIEF")
-
-	elif 2 <= buttonTime < 4:
-		buttonStatus = 2  # 2= Long push
-		print("LONG")
+		if status == 1:
+			status = 2
+		else:
+			if status == 2:
+				status = 3
+			else:
+				if status == 3:
+					status = 1
 
 	elif buttonTime >= 4:
-		buttonStatus = 3  # 3= really long push
 		print("REALLY LONG")
+		status = 1
 
-	if status == 1:
-		status = 2
-	else:
-		if status == 2:
-			status = 3
-		else:
-			if status == 3:
-				status = 1
 
 
 
