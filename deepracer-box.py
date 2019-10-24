@@ -87,10 +87,10 @@ def buttonhandler(channel):
 
 
 
-def get_current_time(count):
-	milliseconds = str((float(count) / 1000)).split('.')[1].zfill(3)
-	seconds = "%02d" % ((count / 1000) % 60)
-	minutes = "%02d" % ((count / 1000) / 60)
+def get_current_time(time_count):
+	milliseconds = str((float(time_count) / 1000)).split('.')[1].zfill(3)[:2]
+	seconds = "%02d" % ((time_count / 1000) % 60)
+	minutes = "%02d" % ((time_count / 1000) / 60)
 	return str(minutes) + ":" + str(seconds) + ":" + milliseconds
 
 
