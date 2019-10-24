@@ -126,7 +126,7 @@ def main(argv):
 		if status == 2:
 			counter_time += 1
 			draw_method(disp, draw, team, counter_time)
-			time.sleep(0.001)
+			time.sleep(0.0001)
 
 		if status == 3:
 			draw_method(disp, draw, team, counter_time)
