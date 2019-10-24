@@ -50,7 +50,7 @@ def setCurrentTeamTime(time, team):
 
 
 def buttonhandler(channel):
-	global status
+	global status, team
 
 	start_time = time.time()
 
@@ -73,6 +73,7 @@ def buttonhandler(channel):
 
 	elif buttonTime >= 4:
 		print("REALLY LONG")
+		team = "-- no team --"
 		team = getCurrentTeam()
 		status = 1
 
