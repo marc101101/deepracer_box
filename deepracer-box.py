@@ -72,18 +72,15 @@ def buttonhandler(channel):
 
 	elif buttonTime >= 4:
 		buttonStatus = 3  # 3= really long push
-		print("REaLLY LONG")
+		print("REALLY LONG")
 
 	if status == 1:
-		print("here-1")
 		status = 2
 	else:
 		if status == 2:
-			print("here-2")
 			status = 3
 		else:
 			if status == 3:
-				print("here-3")
 				status = 1
 
 
@@ -130,7 +127,7 @@ def main(argv):
 	
 	GPIO.setmode(GPIO.BOARD)
 	GPIO.setup(10, GPIO.IN, pull_up_down=GPIO.PUD_UP)
-	GPIO.add_event_detect(10, GPIO.FALLING, callback=buttonhandler, bouncetime=1000)
+	GPIO.add_event_detect(10, GPIO.FALLING, callback=buttonhandler, bouncetime=500)
 
 
 	########################
