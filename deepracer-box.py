@@ -107,10 +107,11 @@ def start_timer(disp, draw):
 	global team, counter_time
 
 	while True:
-	counter_time += 1
+		counter_time += 1
 
-	draw_method(disp, draw, team, counter_time)
-	time.sleep(0.001)
+		draw_method(disp, draw, team, counter_time)
+		
+		time.sleep(0.001)
 
 def main(argv):
 	global status, counter_time, textid, team
