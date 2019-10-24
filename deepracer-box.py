@@ -37,6 +37,7 @@ def getCurrentTeam():
 	#	raise ApiError('GET /tasks/ {}'.format(resp.status_code))
 		return "connection error"
 	else:
+		print(resp.json()["name"])
 		return resp.json()["name"]
 
 
